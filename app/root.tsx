@@ -6,7 +6,8 @@ import {
   Scripts,
   ScrollRestoration,
 } from '@remix-run/react';
-import normalizeStyles from 'modern-normalize/modern-normalize.css';
+
+import { globalLinks } from '~/utils/links';
 
 import type { LinksFunction, MetaFunction } from '@remix-run/cloudflare';
 import type { FC } from 'react';
@@ -18,10 +19,7 @@ export const meta: MetaFunction = () => ({
 });
 
 export const links: LinksFunction = () => [
-  {
-    rel: 'stylesheet',
-    href: normalizeStyles,
-  },
+  ...globalLinks,
 ];
 
 const App: FC = () => {

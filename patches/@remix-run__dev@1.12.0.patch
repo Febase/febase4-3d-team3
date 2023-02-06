@@ -1,0 +1,13 @@
+diff --git a/dist/config/flat-routes.js b/dist/config/flat-routes.js
+index e3646a7421ad3ac2de88cd1584ac23ebb6391307..52c0688b1249c0999b48528b061cbc588a7f1fea 100644
+--- a/dist/config/flat-routes.js
++++ b/dist/config/flat-routes.js
+@@ -33,7 +33,7 @@ function flatRoutes(appDirectory, ignoredFilePatterns) {
+   // fast-glob will return posix paths even on windows
+   // convert posix to os specific paths
+   let routePathsForOS = routePaths.map(routePath => {
+-    return path__default["default"].join(...routePath.split(path__default["default"].posix.sep));
++    return path__default["default"].normalize(routePath);
+   });
+   return flatRoutesUniversal(appDirectory, routePathsForOS);
+ }

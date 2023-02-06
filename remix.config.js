@@ -8,6 +8,7 @@ module.exports = {
     unstable_cssModules: true,
     unstable_cssSideEffectImports: true,
     unstable_vanillaExtract: true,
+    v2_routeConvention: true,
   },
   // appDirectory: "app",
   // assetsBuildDirectory: "public/build",
