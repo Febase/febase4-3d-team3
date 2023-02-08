@@ -1,17 +1,12 @@
 import type { FC } from 'react';
+import SceneContainer from '~/components/scene2/SceneContainer';
+import Title from '~/components/scene2/Title';
 
 const Scene2: FC = () => {
   return (
-    <span
-      style={{
-        fontSize: 32,
-        lineHeight: 1.5,
-        fontWeight: 700,
-        color: '#fff',
-      }}
-    >
-      SCENE 2 PLACEHOLDER
-    </span>
+    <SceneContainer>
+      <Title/>
+    </SceneContainer>
   );
 };
 
