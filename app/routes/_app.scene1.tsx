@@ -1,4 +1,4 @@
-import { StartForm } from '~/components/scene1';
+import Scene1View from '~/components/Scene1View';
 
 import type { FC } from 'react';
 
@@ -9,7 +9,7 @@ export const handle = {
 
 const Scene1: FC = () => {
   return (
-    <StartForm />
+    <Scene1View />
   );
 };
 

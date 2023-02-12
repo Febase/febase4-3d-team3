@@ -16,7 +16,7 @@ const StartButton: FC = () => {
       className={styles.button}
       onClick={handleClick}
     >
-      시작하기
+      Start
     </button>
   );
 };
