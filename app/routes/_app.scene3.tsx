@@ -1,25 +1,9 @@
-import { useNavigate } from '@remix-run/react';
+import Scene3View from '~/components/Scene3View';
 
 import type { FC } from 'react';
 
 const Scene3: FC = () => {
-  const navigate = useNavigate();
-
-  return (
-    <span
-      style={{
-        fontSize: 32,
-        lineHeight: 1.5,
-        fontWeight: 700,
-        color: '#fff',
-      }}
-    >
-      SCENE 3 PLACEHOLDER
-      <button onClick={() => navigate('/scene4')}>
-        go scene 4
-      </button>
-    </span>
-  );
+  return <Scene3View />;
 };
 
 export default Scene3;

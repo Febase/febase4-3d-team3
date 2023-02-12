@@ -14,20 +14,11 @@ interface SceneLayoutProps {
 const SceneLayout: FC<SceneLayoutProps> = ({ children }) => {
   const matches = useMatches();
 
-  const offset = useMemo(
-    () => getOffset(matches),
-    [matches],
-  );
+  const offset = useMemo(() => getOffset(matches), [matches]);
 
-  const dir = useMemo(
-    () => getDir(matches),
-    [matches]
-  );
+  const dir = useMemo(() => getDir(matches), [matches]);
 
-  const posY = useMemo(
-    () => getPosY(matches),
-    [matches],
-  );
+  const posY = useMemo(() => getPosY(matches), [matches]);
 
   return (
     <div
@@ -51,7 +42,9 @@ interface RouteMatchWithSceneHandle extends RouteMatch {
   };
 }
 
-const hasSceneHandle = (route: RouteMatch): route is RouteMatchWithSceneHandle => {
+const hasSceneHandle = (
+  route: RouteMatch
+): route is RouteMatchWithSceneHandle => {
   if (typeof route?.handle?.offset !== 'number') return false;
   if (typeof route?.handle?.dir !== 'string') return false;
   if (!['top', 'bottom'].includes(route.handle.dir)) return false;

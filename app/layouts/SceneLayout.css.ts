@@ -1,4 +1,9 @@
-import { createVar, fallbackVar, style, styleVariants } from '@vanilla-extract/css';
+import {
+  createVar,
+  fallbackVar,
+  style,
+  styleVariants,
+} from '@vanilla-extract/css';
 
 export const y = createVar();
 export const offset = createVar();

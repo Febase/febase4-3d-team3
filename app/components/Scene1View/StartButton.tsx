@@ -12,10 +12,7 @@ const StartButton: FC = () => {
   };
 
   return (
-    <button
-      className={styles.button}
-      onClick={handleClick}
-    >
+    <button className={styles.button} onClick={handleClick}>
       Start
     </button>
   );

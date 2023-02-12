@@ -17,10 +17,7 @@ export const meta: MetaFunction = () => ({
   viewport: 'width=device-width,initial-scale=1',
 });
 
-export const links: LinksFunction = () => [
-  ...fontLinks,
-  ...globalLinks,
-];
+export const links: LinksFunction = () => [...fontLinks, ...globalLinks];
 
 const App: FC = () => {
   return (

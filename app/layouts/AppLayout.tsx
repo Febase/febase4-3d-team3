@@ -16,9 +16,7 @@ const AppLayout: FC<AppLayoutProps> = ({ lang, children }) => {
         <Meta />
         <Links />
       </head>
-      <body className={styles.body}>
-        {children}
-      </body>
+      <body className={styles.body}>{children}</body>
     </html>
   );
 };

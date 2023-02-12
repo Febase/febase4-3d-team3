@@ -15,9 +15,7 @@ const Scene2: FC = () => {
       }}
     >
       SCENE 2 PLACEHOLDER
-      <button onClick={() => navigate('/scene3')}>
-        go scene3
-      </button>
+      <button onClick={() => navigate('/scene3')}>go scene3</button>
     </span>
   );
 };

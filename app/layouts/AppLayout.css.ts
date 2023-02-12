@@ -13,5 +13,5 @@ export const body = style([
     justifyContent: 'center',
     backgroundColor: '#1e0203',
     overflow: 'hidden',
-  }
+  },
 ]);

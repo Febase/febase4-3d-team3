@@ -11,10 +11,12 @@
     "wrangler": "wrangler pages dev ./public",
     "wrangler:login": "wrangler login",
     "wrangler:publish": "wrangler pages publish ./public",
-    "lint": "eslint . --ext .js,.jsx.ts,.tsx",
-    "prettier": "prettier . --write"
+    "lint": "eslint ./app --ext .js,.jsx.ts,.tsx",
+    "prettier": "prettier ./app --write"
   },
   "dependencies": {
+    "@radix-ui/react-icons": "1.1.1",
+    "@radix-ui/react-select": "1.2.0",
     "@react-three/fiber": "8.10.4",
     "@remix-run/cloudflare": "1.12.0",
     "@remix-run/cloudflare-pages": "1.12.0",

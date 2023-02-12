@@ -8,9 +8,7 @@ export const handle = {
 };
 
 const Scene1: FC = () => {
-  return (
-    <Scene1View />
-  );
+  return <Scene1View />;
 };
 
 export default Scene1;
