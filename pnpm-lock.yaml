@@ -17,11 +17,11 @@ specifiers:
   '@types/react': 18.0.25
   '@types/react-dom': 18.0.8
   '@types/three': 0.149.0
-  '@vanilla-extract/css': 1.9.3
+  '@vanilla-extract/css': 1.9.5
+  '@vanilla-extract/dynamic': 2.0.3
   cross-env: 7.0.3
   eslint: 8.27.0
   eslint-plugin-simple-import-sort: 10.0.0
-  modern-normalize: 1.1.0
   npm-run-all: 4.1.5
   prettier: 2.8.3
   react: 18.2.0
@@ -37,9 +37,9 @@ dependencies:
   '@remix-run/cloudflare-pages': 1.12.0_nr2idvs76shwiiaj7a6jlz2s4u
   '@remix-run/css-bundle': 1.12.0
   '@remix-run/react': 1.12.0_biqbaboplfbrettd7655fr4n2y
-  '@vanilla-extract/css': 1.9.3
+  '@vanilla-extract/css': 1.9.5
+  '@vanilla-extract/dynamic': 2.0.3
   cross-env: 7.0.3
-  modern-normalize: 1.1.0
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   three: 0.149.0
@@ -2274,8 +2274,8 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
-  /@vanilla-extract/css/1.9.3:
-    resolution: {integrity: sha512-vitcD8usEOTWDLAnbtnZ46YbHADAp3Es+3xyHsMDMZOEWk03FhD+PbR58kdwtGpr258+hMryCYtQPeFh5lWFbA==}
+  /@vanilla-extract/css/1.9.5:
+    resolution: {integrity: sha512-aVSv6q24zelKRtWx/l9yshU3gD1uCDMZ2ZGcIiYnAcPfyLryrG/1X5DxtyiPKcyI/hZWoteHofsN//2q9MvzOA==}
     dependencies:
       '@emotion/hash': 0.9.0
       '@vanilla-extract/private': 1.0.3
@@ -2289,13 +2289,19 @@ packages:
       media-query-parser: 2.0.2
       outdent: 0.8.0
 
+  /@vanilla-extract/dynamic/2.0.3:
+    resolution: {integrity: sha512-Rglfw2gXAYiBzAQ4jgUG7rBgE2c88e/zcG27ZVoIqMHVq56wf2C1katGMm1yFMNBgzqM7oBNYzz4YOMzznydkg==}
+    dependencies:
+      '@vanilla-extract/private': 1.0.3
+    dev: false
+
   /@vanilla-extract/integration/6.0.3:
     resolution: {integrity: sha512-X+yGGhgzxMWFrdI5S6tlPeMPPlBce9rLCMOHjUC8G4stM4QdUdnSXJFMjwQwZowlOTqUWPDaXhG2qz/jbf912Q==}
     dependencies:
       '@babel/core': 7.20.12
       '@babel/plugin-syntax-typescript': 7.20.0_@babel+core@7.20.12
       '@vanilla-extract/babel-plugin-debug-ids': 1.0.1
-      '@vanilla-extract/css': 1.9.3
+      '@vanilla-extract/css': 1.9.5
       esbuild: 0.16.3
       eval: 0.1.6
       find-up: 5.0.0
@@ -5506,11 +5512,6 @@ packages:
       pathe: 1.1.0
       pkg-types: 1.0.1
       ufo: 1.0.1
-
-  /modern-normalize/1.1.0:
-    resolution: {integrity: sha512-2lMlY1Yc1+CUy0gw4H95uNN7vjbpoED7NNRSBHE25nWfLBdmMzFCsPshlzbxHz+gYMcBEUN8V4pU16prcdPSgA==}
-    engines: {node: '>=6'}
-    dev: false
 
   /mri/1.2.0:
     resolution: {integrity: sha512-tzzskb3bG8LvYGFF/mDTpq3jpI6Q9wc3LEmBaghu+DdCssd1FakN7Bc0hVNmEyGq1bq3RgfkCb3cmQLpNPOroA==}

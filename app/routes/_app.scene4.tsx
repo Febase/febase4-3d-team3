@@ -1,5 +1,10 @@
 import type { FC } from 'react';
 
+export const handle = {
+  offset: 64,
+  dir: 'bottom',
+};
+
 const Scene4: FC = () => {
   return (
     <span
