@@ -6,23 +6,36 @@ export const offset = createVar();
 export const base = style({
   maxWidth: 480,
   width: '100%',
-  height: `calc(100% - ${fallbackVar(offset, '64px')})`,
+  height: '100%',
   backgroundColor: 'rgba(31, 24, 24, 0.8)',
   boxShadow: '0px 0px 16px rgba(255, 255, 255, 0.16)',
-  transform: `translateY(${fallbackVar(y, '32px')})`,
-  transition: 'height 300ms ease-in-out, transform 300ms ease-in-out',
   padding: 32,
+  '@media': {
+    '(min-width: 480px)': {
+      height: `calc(100% - ${fallbackVar(offset, '64px')})`,
+      transform: `translateY(${fallbackVar(y, '32px')})`,
+      transition: 'height 300ms ease-in-out, transform 300ms ease-in-out',
+    },
+  },
 });
 
 export const radius = styleVariants({
   default: {},
   top: {
-    borderTopLeftRadius: 12,
-    borderTopRightRadius: 12,
+    '@media': {
+      '(min-width: 480px)': {
+        borderTopLeftRadius: 12,
+        borderTopRightRadius: 12,
+      },
+    },
   },
   bottom: {
-    borderBottomLeftRadius: 12,
-    borderBottomRightRadius: 12,
+    '@media': {
+      '(min-width: 480px)': {
+        borderBottomLeftRadius: 12,
+        borderBottomRightRadius: 12,
+      },
+    },
   },
 });
 
