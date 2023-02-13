@@ -1,6 +1,9 @@
 import { forwardRef } from 'react';
 
+import { ClientOnly } from '~/components/common';
+
 import * as styles from './Cake3D.css';
+import ThreeCanvas from './ThreeCanvas';
 
 export interface Cake3DProps {
   title: string;
@@ -13,11 +16,11 @@ const Cake3D = forwardRef<Cake3DRef, Cake3DProps>(({ title }, ref) => {
     <div className={styles.box}>
       <span className={styles.title}>{title}</span>
       <hr className={styles.divider} />
-      <img
-        className={styles.placeholder}
-        src={'/images/cake-placeholder.png'}
-        alt={'cake'}
-      />
+      <div className={styles.canvasBox}>
+        <ClientOnly>
+          <ThreeCanvas />
+        </ClientOnly>
+      </div>
     </div>
   );
 });
