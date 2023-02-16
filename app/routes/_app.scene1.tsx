@@ -1,12 +1,15 @@
-import { SceneContainer, StartForm } from '~/components/scene1';
+import Scene1View from '~/components/Scene1View';
 
 import type { FC } from 'react';
 
+export const handle = {
+  offset: 64,
+  dir: 'top',
+};
+
 const Scene1: FC = () => {
   return (
-    <SceneContainer>
-      <StartForm />
-    </SceneContainer>
+    <Scene1View />
   );
 };
 

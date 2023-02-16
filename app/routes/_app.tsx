@@ -1,14 +1,14 @@
 import { Outlet } from '@remix-run/react';
 
-import { Container } from '~/components/common';
+import { SceneLayout } from '~/layouts';
 
 import type { FC } from 'react';
 
 const Index: FC = () => {
   return (
-    <Container>
+    <SceneLayout>
       <Outlet />
-    </Container>
+    </SceneLayout>
   );
 };
 
