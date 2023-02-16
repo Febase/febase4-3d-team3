@@ -1,13 +1,12 @@
 import {
-  Links,
   LiveReload,
-  Meta,
   Outlet,
   Scripts,
   ScrollRestoration,
 } from '@remix-run/react';
 
-import { globalLinks } from '~/utils/links';
+import { AppLayout } from '~/layouts';
+import { fontLinks, globalLinks } from '~/utils/links';
 
 import type { LinksFunction, MetaFunction } from '@remix-run/cloudflare';
 import type { FC } from 'react';
@@ -19,23 +18,18 @@ export const meta: MetaFunction = () => ({
 });
 
 export const links: LinksFunction = () => [
+  ...fontLinks,
   ...globalLinks,
 ];
 
 const App: FC = () => {
   return (
-    <html lang='ko'>
-      <head>
-        <Meta />
-        <Links />
-      </head>
-      <body>
-        <Outlet />
-        <ScrollRestoration />
-        <Scripts />
-        <LiveReload />
-      </body>
-    </html>
+    <AppLayout lang={'ko'}>
+      <Outlet />
+      <ScrollRestoration />
+      <Scripts />
+      <LiveReload />
+    </AppLayout>
   );
 };
 

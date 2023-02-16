@@ -1,6 +1,10 @@
+import { useNavigate } from '@remix-run/react';
+
 import type { FC } from 'react';
 
 const Scene3: FC = () => {
+  const navigate = useNavigate();
+
   return (
     <span
       style={{
@@ -11,6 +15,9 @@ const Scene3: FC = () => {
       }}
     >
       SCENE 3 PLACEHOLDER
+      <button onClick={() => navigate('/scene4')}>
+        go scene 4
+      </button>
     </span>
   );
 };
