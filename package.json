@@ -15,11 +15,16 @@
     "prettier": "prettier . --write"
   },
   "dependencies": {
+    "@react-three/drei": "^9.56.25",
     "@react-three/fiber": "8.10.4",
     "@remix-run/cloudflare": "1.13.0",
     "@remix-run/cloudflare-pages": "1.13.0",
     "@remix-run/css-bundle": "1.13.0",
     "@remix-run/react": "1.13.0",
+    "@splinetool/loader": "^0.9.220",
+    "@splinetool/r3f-spline": "^1.0.2",
+    "@splinetool/react-spline": "^2.2.5",
+    "@splinetool/runtime": "^0.9.220",
     "@vanilla-extract/css": "1.9.5",
     "@vanilla-extract/dynamic": "2.0.3",
     "cross-env": "7.0.3",
