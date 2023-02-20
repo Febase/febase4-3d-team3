@@ -1,13 +1,16 @@
-import { Canvas } from '@react-three/fiber';
 import {
   Center,
   OrbitControls,
   Text3D,
   useMatcapTexture,
 } from '@react-three/drei';
-import { FC, Suspense, useEffect } from 'react';
-import * as styles from './Preview.css';
+import { Canvas } from '@react-three/fiber';
+import { Suspense, useEffect } from 'react';
+
 import Cake from './Cake';
+import * as styles from './Preview.css';
+
+import type { FC } from 'react';
 interface PreviewProps {
   selectedId: string;
 }

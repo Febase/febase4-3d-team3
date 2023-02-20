@@ -8,7 +8,7 @@ import type { Group, Material } from 'three';
 export interface CakeModelRef {
   scene: Group | null;
   materials: Record<string, Material>;
-};
+}
 
 interface CakeModelProps {
   scale?: number;
@@ -18,32 +18,16 @@ interface CakeModelProps {
 }
 
 const CakeModel = forwardRef<CakeModelRef, CakeModelProps>(
-  (
-    {
-      scale,
-      position,
-      rotation,
-      renderCallback = () => {},
-    },
-    ref,
-  ) => {
+  ({ scale, position, rotation, renderCallback = () => {} }, ref) => {
     const { scene } = useGLTF('/models/scene.gltf', true);
     const { materials } = useGraph(scene);
 
     useFrame(renderCallback);
 
-    useImperativeHandle(
-      ref,
-      () => ({ scene, materials }),
-      [scene, materials]
-    );
+    useImperativeHandle(ref, () => ({ scene, materials }), [scene, materials]);
 
     return (
-      <group
-        scale={scale}
-        position={position}
-        rotation={rotation}
-      >
+      <group scale={scale} position={position} rotation={rotation}>
         <primitive object={scene} />
       </group>
     );

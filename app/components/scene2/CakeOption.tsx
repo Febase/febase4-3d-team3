@@ -1,6 +1,7 @@
 import { Center, Text3D, useMatcapTexture } from '@react-three/drei';
 import { useEffect, useMemo, useRef } from 'react';
 import * as THREE from 'three';
+
 import options from './options';
 
 interface CakeProps {

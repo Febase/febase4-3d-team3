@@ -1,7 +1,10 @@
 import { Canvas } from '@react-three/fiber';
-import { ChangeEvent, FC, Suspense } from 'react';
+import { ChangeEvent, Suspense } from 'react';
+
 import CakeOption from './CakeOption';
 import * as optionStyle from './Option.css';
+
+import type { FC } from 'react';
 
 interface OptionProps {
   typeId: string;

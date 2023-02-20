@@ -3,6 +3,7 @@ import { useRef } from 'react';
 import Cake3D from '~/components/Cake3D';
 
 import Container from './Container';
+import NextButton from './NextButton';
 import * as styles from './Scene2View.css';
 
 import type { FC } from 'react';
@@ -19,7 +20,6 @@ const Scene2View: FC = () => {
     const cakeMaterial = materials['Cake'] as MeshStandardMaterial;
 
     cakeMaterial.color.setRGB(...newColor);
-    console.log(cakeMaterial.color);
   };
 
   return (
@@ -35,6 +35,7 @@ const Scene2View: FC = () => {
           />
         ))}
       </div>
+      <NextButton />
     </Container>
   );
 };

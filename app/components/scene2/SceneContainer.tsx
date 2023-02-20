@@ -7,9 +7,7 @@ interface SceneContainerProps {
 }
 
 const SceneContainer: FC<SceneContainerProps> = ({ children }) => (
-  <div className={styles.box}>
-    {children}
-  </div>
+  <div className={styles.box}>{children}</div>
 );
 
 export default SceneContainer;

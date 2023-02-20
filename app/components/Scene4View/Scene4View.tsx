@@ -6,12 +6,9 @@ import * as styles from './Scene4View.css';
 import ShareButton from './ShareButton';
 
 import type { FC } from 'react';
-import type {
-  Cake3DFrameCallback,
-  Cake3DRef,
-} from '~/components/Cake3D';
+import type { Cake3DFrameCallback, Cake3DRef } from '~/components/Cake3D';
 
-const Scene4View: FC  = () => {
+const Scene4View: FC = () => {
   const ref = useRef<Cake3DRef>(null);
 
   const handleFrame: Cake3DFrameCallback = () => {
@@ -25,11 +22,7 @@ const Scene4View: FC  = () => {
 
   return (
     <div className={styles.layout}>
-      <Cake3D
-        title={'YOUR CAKE'}
-        onFrame={handleFrame}
-        ref={ref}
-      />
+      <Cake3D title={'YOUR CAKE'} onFrame={handleFrame} ref={ref} />
       <ShareButton />
     </div>
   );

@@ -6,4 +6,5 @@ export const formBox = style({
   display: 'flex',
   flexDirection: 'column',
   gap: 16,
+  flex: 1,
 });

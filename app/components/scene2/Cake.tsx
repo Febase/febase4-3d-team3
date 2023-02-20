@@ -1,6 +1,7 @@
 import { Center, Text3D, useMatcapTexture } from '@react-three/drei';
 import { useEffect } from 'react';
 import * as THREE from 'three';
+
 import options from './options';
 const cylinderGeometry = new THREE.CylinderGeometry(10, 10, 8, 40);
 const material = new THREE.MeshMatcapMaterial();

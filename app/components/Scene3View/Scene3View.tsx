@@ -4,6 +4,7 @@ import Cake3D from '~/components/Cake3D';
 
 import Container from './Container';
 import Header from './Header';
+import NextButton from './NextButton';
 import * as styles from './Scene3View.css';
 import SelectBox from './SelectBox';
 import SelectContent from './SelectContent';
@@ -12,6 +13,7 @@ import TextField from './TextField';
 
 import type { FC } from 'react';
 
+// TODO: implement select
 const Scene3View: FC = () => {
   const formBoxRef = useRef<HTMLDivElement | null>(null);
 
@@ -34,6 +36,8 @@ const Scene3View: FC = () => {
       <div className={styles.formBox} ref={formBoxRef}>
         <TextField label={'TO.'} name={'to'} />
         <TextField label={'From.'} name={'from'} />
+        <NextButton />
+        {/*}
         <SelectBox label={'Lettering.'}>
           {selectWidth !== null && (
             <SelectContent width={selectWidth}>
@@ -52,6 +56,7 @@ const Scene3View: FC = () => {
             </SelectContent>
           )}
         </SelectBox>
+          */}
       </div>
     </Container>
   );
