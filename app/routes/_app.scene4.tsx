@@ -1,3 +1,5 @@
+import Scene4View from '~/components/Scene4View/Scene4View';
+
 import type { FC } from 'react';
 
 export const handle = {
@@ -7,16 +9,9 @@ export const handle = {
 
 const Scene4: FC = () => {
   return (
-    <span
-      style={{
-        fontSize: 32,
-        lineHeight: 1.5,
-        fontWeight: 700,
-        color: '#fff',
-      }}
-    >
-      SCENE 4 PLACEHOLDER
-    </span>
+    <>
+      <Scene4View />
+    </>
   );
 };
 
