@@ -1,16 +1,20 @@
 import { Center, Text3D, useMatcapTexture } from '@react-three/drei';
-import { useEffect } from 'react';
+import { useEffect, useMemo, useRef } from 'react';
 import * as THREE from 'three';
 import options from './options';
-const cylinderGeometry = new THREE.CylinderGeometry(10, 10, 8, 40);
-const material = new THREE.MeshMatcapMaterial();
-const textMaterial = new THREE.MeshMatcapMaterial();
 
 interface CakeProps {
   typeId: string;
 }
 
-export default function Cake({ typeId }: CakeProps) {
+export default function CakeOption({ typeId }: CakeProps) {
+  const cylinderGeometry = useMemo(
+    () => new THREE.CylinderGeometry(10, 10, 8, 40),
+    []
+  );
+  const material = useMemo(() => new THREE.MeshMatcapMaterial(), []);
+  const textMaterial = useMemo(() => new THREE.MeshMatcapMaterial(), []);
+
   const matcap = options[typeId].matcap;
   const [matcapTexture] = useMatcapTexture(matcap, 256);
   const [textMatcapTexture] = useMatcapTexture(
@@ -30,15 +34,15 @@ export default function Cake({ typeId }: CakeProps) {
 
     textMaterial.matcap = textMatcapTexture;
     textMaterial.needsUpdate = true;
-  }, [matcapTexture, textMatcapTexture]);
+  }, []);
 
   return (
     <group>
       <Text3D
         material={textMaterial}
         font='./fonts/Dancing_Script_Regular.json'
-        size={0.2}
-        height={0.2}
+        size={0.4}
+        height={0.4}
         curveSegments={12}
         bevelEnabled
         bevelThickness={0.02}
@@ -57,7 +61,7 @@ export default function Cake({ typeId }: CakeProps) {
         material={material}
         geometry={cylinderGeometry}
       >
-        <cylinderGeometry args={[0.8, 0.8, 0.4, 40]} />
+        <cylinderGeometry args={[1.6, 1.6, 0.8, 40]} />
       </mesh>
       <mesh
         castShadow
@@ -66,7 +70,7 @@ export default function Cake({ typeId }: CakeProps) {
         material={material}
         geometry={cylinderGeometry}
       >
-        <cylinderGeometry args={[1.2, 1.2, 0.4, 40]} />
+        <cylinderGeometry args={[2.4, 2.4, 0.8, 40]} />
       </mesh>
     </group>
   );

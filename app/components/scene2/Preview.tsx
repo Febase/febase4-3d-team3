@@ -5,12 +5,13 @@ import {
   Text3D,
   useMatcapTexture,
 } from '@react-three/drei';
-import { Perf } from 'r3f-perf';
-import { FC, useEffect } from 'react';
+import { FC, Suspense, useEffect } from 'react';
 import * as styles from './Preview.css';
-import * as THREE from 'three';
 import Cake from './Cake';
-const Preview: FC = ({}) => {
+interface PreviewProps {
+  selectedId: string;
+}
+const Preview: FC<PreviewProps> = ({ selectedId }) => {
   return (
     <Canvas
       shadows
@@ -18,11 +19,11 @@ const Preview: FC = ({}) => {
         fov: 45,
         near: 0.1,
         far: 200,
-        position: [-4, 3, 6],
+        position: [-8, 6, 4],
       }}
       className={styles.previewBox}
     >
-      <OrbitControls makeDefault />
+      <OrbitControls enableZoom={false} />
       <directionalLight
         castShadow
         position={[1, 2, 3]}
@@ -30,9 +31,11 @@ const Preview: FC = ({}) => {
         shadow-normalBias={0.04}
       />
       <ambientLight intensity={0.5} />
-      <Center>
-        <Cake />
-      </Center>
+      <Suspense fallback={null}>
+        <Center>
+          <Cake typeId={selectedId} />
+        </Center>
+      </Suspense>
     </Canvas>
   );
 };

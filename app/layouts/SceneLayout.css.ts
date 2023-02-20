@@ -1,4 +1,9 @@
-import { createVar, fallbackVar, style, styleVariants } from '@vanilla-extract/css';
+import {
+  createVar,
+  fallbackVar,
+  style,
+  styleVariants,
+} from '@vanilla-extract/css';
 
 export const y = createVar();
 export const offset = createVar();
@@ -6,7 +11,7 @@ export const offset = createVar();
 export const base = style({
   maxWidth: 480,
   width: '100%',
-  height: '100%',
+  height: '100vh',
   backgroundColor: 'rgba(31, 24, 24, 0.8)',
   boxShadow: '0px 0px 16px rgba(255, 255, 255, 0.16)',
   padding: 32,
