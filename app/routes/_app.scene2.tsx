@@ -1,5 +1,7 @@
 import { useState } from 'react';
 
+import Scene2View from '~/components/Scene2View';
+
 import Option from '~/components/scene2/Option';
 import options from '~/components/scene2/options';
 import Preview from '~/components/scene2/Preview';
@@ -10,6 +12,9 @@ import Title from '~/components/scene2/Title';
 import type { FC } from 'react';
 
 const Scene2: FC = () => {
+  return <Scene2View />;
+
+
   const [selectedId, setSelectedId] = useState('type1');
   return (
     <SceneContainer>

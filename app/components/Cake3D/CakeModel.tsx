@@ -1,11 +1,14 @@
 import { useGLTF } from '@react-three/drei';
-import { useFrame } from '@react-three/fiber';
+import { useFrame, useGraph } from '@react-three/fiber';
 import { forwardRef, useImperativeHandle } from 'react';
 
 import type { RenderCallback } from '@react-three/fiber';
-import type { Group } from 'three';
+import type { Group, Material } from 'three';
 
-export type CakeModelRef = Group | null;
+export interface CakeModelRef {
+  scene: Group | null;
+  materials: Record<string, Material>;
+};
 
 interface CakeModelProps {
   scale?: number;
@@ -25,13 +28,22 @@ const CakeModel = forwardRef<CakeModelRef, CakeModelProps>(
     ref,
   ) => {
     const { scene } = useGLTF('/models/scene.gltf', true);
+    const { materials } = useGraph(scene);
 
     useFrame(renderCallback);
 
-    useImperativeHandle(ref, () => scene, [scene]);
+    useImperativeHandle(
+      ref,
+      () => ({ scene, materials }),
+      [scene, materials]
+    );
 
     return (
-      <group scale={scale} position={position} rotation={rotation} ref={ref}>
+      <group
+        scale={scale}
+        position={position}
+        rotation={rotation}
+      >
         <primitive object={scene} />
       </group>
     );

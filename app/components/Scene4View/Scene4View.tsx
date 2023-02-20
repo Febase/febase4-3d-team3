@@ -15,7 +15,7 @@ const Scene4View: FC  = () => {
   const ref = useRef<Cake3DRef>(null);
 
   const handleFrame: Cake3DFrameCallback = () => {
-    const scene = ref.current;
+    const scene = ref.current?.scene ?? null;
     if (scene === null) return;
 
     const mesh = scene.children[0];
