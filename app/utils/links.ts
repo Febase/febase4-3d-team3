@@ -10,9 +10,7 @@ export const globalLinks: ReturnType<LinksFunction> = [
     rel: 'stylesheet',
     href: normalizeStyles,
   },
-  ...(cssBundleHref
-    ? [{ rel: 'stylesheet', href: cssBundleHref }]
-    : []),
+  ...(cssBundleHref ? [{ rel: 'stylesheet', href: cssBundleHref }] : []),
 ];
 
 export const fontLinks: ReturnType<LinksFunction> = [

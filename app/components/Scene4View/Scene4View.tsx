@@ -1,30 +1,35 @@
-import { Canvas } from '@react-three/fiber';
-import { Suspense } from 'react';
+import { useRef } from 'react';
 
-import CakeElement from '~/components/Scene4View/CakeElement';
+import Cake3D from '~/components/Cake3D';
 
 import * as styles from './Scene4View.css';
-import ShareButton from '~/components/Scene4View/ShareButton';
+import ShareButton from './ShareButton';
 
-const Scene4View = () => {
+import type { FC } from 'react';
+import type {
+  Cake3DFrameCallback,
+  Cake3DRef,
+} from '~/components/Cake3D';
+
+const Scene4View: FC  = () => {
+  const ref = useRef<Cake3DRef>(null);
+
+  const handleFrame: Cake3DFrameCallback = () => {
+    const scene = ref.current;
+    if (scene === null) return;
+
+    const mesh = scene.children[0];
+
+    mesh.rotateZ(0.001);
+  };
+
   return (
     <div className={styles.layout}>
-      <h3 className={styles.title}>YOUR CAKE</h3>
-      <hr className={styles.divider} />
-      <Canvas
-        style={{
-          display: 'flex',
-          justifyContent: 'center',
-          marginTop: '-200px',
-          height: '500px',
-        }}
-      >
-        <ambientLight intensity={0.5} />
-        <directionalLight position={[10, 10, 5]} intensity={1.5} />
-        <Suspense fallback={null}>
-          <CakeElement />
-        </Suspense>
-      </Canvas>
+      <Cake3D
+        title={'YOUR CAKE'}
+        onFrame={handleFrame}
+        ref={ref}
+      />
       <ShareButton />
     </div>
   );

@@ -7,7 +7,7 @@ const handleRequest: HandleDocumentRequestFunction = (
   request,
   responseStatusCode,
   responseHeaders,
-  remixContext,
+  remixContext
 ) => {
   const markup = renderToString(
     <RemixServer context={remixContext} url={request.url} />

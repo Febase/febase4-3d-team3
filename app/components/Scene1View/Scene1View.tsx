@@ -13,9 +13,7 @@ const Scene1View: FC = () => {
         src={'/images/heart.png'}
         alt={'heart'}
       />
-      <span className={styles.title}>
-        {'HAPPY\nVALENTINES DAY!'}
-      </span>
+      <span className={styles.title}>{'HAPPY\nVALENTINES DAY!'}</span>
       <span className={styles.body}>
         {'소중한 사람을 위해\n발렌타인 데이 레터링 케이크를\n만들어 보세요!'}
       </span>

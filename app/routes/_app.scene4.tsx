@@ -1,4 +1,4 @@
-import Scene4View from '~/components/Scene4View/Scene4View';
+import Scene4View from '~/components/Scene4View';
 
 import type { FC } from 'react';
 
@@ -8,11 +8,7 @@ export const handle = {
 };
 
 const Scene4: FC = () => {
-  return (
-    <>
-      <Scene4View />
-    </>
-  );
+  return <Scene4View />;
 };
 
 export default Scene4;
