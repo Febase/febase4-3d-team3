@@ -16,7 +16,9 @@ export interface Cake3DProps {
   onFrame?: Cake3DFrameCallback;
 }
 
-const Cake3D = forwardRef<CakeModelRef, Cake3DProps>(
+export type Cake3DRef = CakeModelRef;
+
+const Cake3D = forwardRef<Cake3DRef, Cake3DProps>(
   ({ title, onFrame }, ref) => {
     return (
       <div className={styles.box}>
