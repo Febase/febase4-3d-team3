@@ -1,22 +1,30 @@
-import { useNavigate } from '@remix-run/react';
+import { useState } from 'react';
+
+import Option from '~/components/scene2/Option';
+import options from '~/components/scene2/options';
+import Preview from '~/components/scene2/Preview';
+import SceneContainer from '~/components/scene2/SceneContainer';
+import Selector from '~/components/scene2/Selector';
+import Title from '~/components/scene2/Title';
 
 import type { FC } from 'react';
 
 const Scene2: FC = () => {
-  const navigate = useNavigate();
-
+  const [selectedId, setSelectedId] = useState('type1');
   return (
-    <span
-      style={{
-        fontSize: 32,
-        lineHeight: 1.5,
-        fontWeight: 700,
-        color: '#fff',
-      }}
-    >
-      SCENE 2 PLACEHOLDER
-      <button onClick={() => navigate('/scene3')}>go scene3</button>
-    </span>
+    <SceneContainer>
+      <Title />
+      <Preview selectedId={selectedId} />
+      <Selector>
+        {Object.keys(options).map((option) => (
+          <Option
+            key={option}
+            typeId={option}
+            onClick={() => setSelectedId(option)}
+          />
+        ))}
+      </Selector>
+    </SceneContainer>
   );
 };
 
