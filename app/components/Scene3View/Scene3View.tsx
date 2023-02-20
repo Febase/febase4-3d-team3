@@ -1,4 +1,4 @@
-import { useLayoutEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import Cake3D from '~/components/Cake3D';
 
@@ -17,7 +17,7 @@ const Scene3View: FC = () => {
 
   const [selectWidth, setSelectWidth] = useState<number | null>(null);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (typeof window === 'undefined') return;
     if (typeof window.document === 'undefined') return;
 

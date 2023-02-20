@@ -27,3 +27,8 @@ export const divider = style({
 export const placeholder = style({
   width: '75%',
 });
+
+export const canvasBox = style({
+  width: '75%',
+  aspectRatio: '1 / 1',
+});
