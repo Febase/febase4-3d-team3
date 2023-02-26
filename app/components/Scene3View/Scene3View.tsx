@@ -1,3 +1,4 @@
+import { useNavigate, useSearchParams } from '@remix-run/react';
 import { useEffect, useRef, useState } from 'react';
 
 import Cake3D from '~/components/Cake3D';
@@ -16,8 +17,21 @@ import type { FC } from 'react';
 // TODO: implement select
 const Scene3View: FC = () => {
   const formBoxRef = useRef<HTMLDivElement | null>(null);
-
   const [selectWidth, setSelectWidth] = useState<number | null>(null);
+
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const [query, setQuery] = useState({
+    color: searchParams.get('color') ?? 'type-default',
+    to: '',
+    from: '',
+    lettering: '',
+  });
+
+  const handleChange = ({ name, value }: { name: string; value: string }) => {
+    setQuery({ ...query, [name]: value });
+    setSearchParams({ ...query, [name]: value });
+  };
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
@@ -34,29 +48,38 @@ const Scene3View: FC = () => {
       <Header />
       <Cake3D title={'LETTERING'} />
       <div className={styles.formBox} ref={formBoxRef}>
-        <TextField label={'TO.'} name={'to'} />
-        <TextField label={'From.'} name={'from'} />
-        <NextButton />
-        {/*}
-        <SelectBox label={'Lettering.'}>
+        <TextField
+          label={'TO.'}
+          name={'to'}
+          onChange={(e) => {
+            handleChange({ name: 'to', value: e.target.value });
+          }}
+        />
+        <TextField
+          label={'From.'}
+          name={'from'}
+          onChange={(e) => {
+            handleChange({ name: 'from', value: e.target.value });
+          }}
+        />
+        <SelectBox
+          label={'Lettering.'}
+          onChange={(value) => {
+            handleChange({ name: 'lettering', value });
+          }}
+        >
           {selectWidth !== null && (
             <SelectContent width={selectWidth}>
               <SelectItem
                 value={'template-1'}
-                text={`[TEMPLATE - 1] Happy Valentine's Day!`}
+                text={`Happy Valentine's Day!`}
               />
-              <SelectItem
-                value={'template-2'}
-                text={`[TEMPLATE - 2] Happy Valentine's Day!`}
-              />
-              <SelectItem
-                value={'template-3'}
-                text={`[TEMPLATE - 3] Happy Valentine's Day!`}
-              />
+              <SelectItem value={'template-2'} text={`Happy White Day!`} />
+              <SelectItem value={'template-3'} text={`With Love,`} />
             </SelectContent>
           )}
         </SelectBox>
-          */}
+        <NextButton searchParams={searchParams} />
       </div>
     </Container>
   );

@@ -2,13 +2,11 @@ import { useNavigate } from '@remix-run/react';
 
 import * as styles from './NextButton.css';
 
-import type { FC } from 'react';
-
-const NextButton: FC = () => {
+const NextButton = ({ searchParams }: { searchParams: URLSearchParams }) => {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate('/scene3');
+    navigate(`/scene3?${searchParams.toString()}`);
   };
 
   return (
