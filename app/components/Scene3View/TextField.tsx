@@ -4,6 +4,7 @@ import type { FC, HTMLProps } from 'react';
 
 interface TextFieldProps extends HTMLProps<HTMLInputElement> {
   label: string;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 const TextField: FC<TextFieldProps> = ({ label, ...props }) => {
