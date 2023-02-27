@@ -46,7 +46,7 @@ const Scene3View: FC = () => {
   return (
     <Container>
       <Header />
-      <Cake3D title={'LETTERING'} />
+      <Cake3D title={'LETTERING'} lettering={query.lettering} />
       <div className={styles.formBox} ref={formBoxRef}>
         <TextField
           label={'TO.'}
@@ -70,12 +70,9 @@ const Scene3View: FC = () => {
         >
           {selectWidth !== null && (
             <SelectContent width={selectWidth}>
-              <SelectItem
-                value={'template-1'}
-                text={`Happy Valentine's Day!`}
-              />
-              <SelectItem value={'template-2'} text={`Happy White Day!`} />
-              <SelectItem value={'template-3'} text={`With Love,`} />
+              {Object.keys(LETTERINGS).map((key) => (
+                <SelectItem key={key} value={key} text={LETTERINGS[key]} />
+              ))}
             </SelectContent>
           )}
         </SelectBox>
@@ -86,3 +83,13 @@ const Scene3View: FC = () => {
 };
 
 export default Scene3View;
+
+interface CakeLetterings {
+  [key: string]: string;
+}
+
+export const LETTERINGS: CakeLetterings = {
+  'template-1': `Happy Valentine's Day!`,
+  'template-2': `Happy White Day!`,
+  'template-3': `With Love,`,
+};
