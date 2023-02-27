@@ -1,6 +1,7 @@
 import { useRef } from 'react';
 
 import Cake3D from '~/components/Cake3D';
+import { ClientOnly } from '~/components/common';
 
 import * as styles from './Scene4View.css';
 import ShareButton from './ShareButton';
@@ -23,7 +24,9 @@ const Scene4View: FC = () => {
   return (
     <div className={styles.layout}>
       <Cake3D title={'YOUR CAKE'} onFrame={handleFrame} ref={ref} />
-      <ShareButton />
+      <ClientOnly>
+        <ShareButton />
+      </ClientOnly>
     </div>
   );
 };
