@@ -1,3 +1,4 @@
+import { useSearchParams } from '@remix-run/react';
 import { useRef } from 'react';
 
 import Cake3D from '~/components/Cake3D';
@@ -11,6 +12,8 @@ import type { Cake3DFrameCallback, Cake3DRef } from '~/components/Cake3D';
 
 const Scene4View: FC = () => {
   const ref = useRef<Cake3DRef>(null);
+  const [searchParams] = useSearchParams();
+  const letterTo = searchParams.get('to') ?? '';
 
   const handleFrame: Cake3DFrameCallback = () => {
     const scene = ref.current?.scene ?? null;
@@ -23,7 +26,7 @@ const Scene4View: FC = () => {
 
   return (
     <div className={styles.layout}>
-      <Cake3D title={'YOUR CAKE'} onFrame={handleFrame} ref={ref} />
+      <Cake3D title={`To. ${letterTo}`} onFrame={handleFrame} ref={ref} />
       <ClientOnly>
         <ShareButton />
       </ClientOnly>
