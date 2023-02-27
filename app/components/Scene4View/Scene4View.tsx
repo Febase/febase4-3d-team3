@@ -15,16 +15,16 @@ const Scene4View: FC = () => {
   const [searchParams] = useSearchParams();
   const letterTo = searchParams.get('to') ?? '';
 
-  //   mesh.rotateZ(0.001);
-  // };
-
   return (
     <div className={styles.layout}>
-      <Cake3D title={`To. ${letterTo}`} onFrame={handleFrame} ref={ref} lettering={searchParams.get('lettering') ?? 'template-1'} />
+      <Cake3D
+        title={`To. ${letterTo}`}
+        ref={ref}
+        lettering={searchParams.get('lettering') ?? 'template-1'}
+      />
       <ClientOnly>
         <ShareButton />
       </ClientOnly>
-        
     </div>
   );
 };
